@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+
 import Navbar from './components/Navbar';
+import AccountButton from './components/AccountButton';
+
+import Posts from './components/posts/Posts';
 
 function App(props) {
 
@@ -25,7 +29,15 @@ function App(props) {
 
   return (
     <div className="App">
-      <Navbar connectWallet={connectWallet} walletAddress={walletAddress} />
+      <Navbar/>
+      <AccountButton connectWallet={connectWallet} walletAddress={walletAddress} />
+      <div className="container">
+        <div className="row">
+          <div className="col-9 offset-3">
+            <Posts/>
+          </div>
+        </div>        
+      </div>
     </div>
   );
 }
